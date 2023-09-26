@@ -18,7 +18,7 @@ export const Layout = (props) => {
 
     return (
         <div>
-            <div className="navbar shadow bg-base-100">
+            <div className="navbar shadow bg-base-100 fixed z-50 top-0">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -27,20 +27,20 @@ export const Layout = (props) => {
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         <li><NavLink to="/">হোম</NavLink></li>
                         {
-                            categories.map((item)=>{
-                                return <li key={item['id']}><NavLink to={"/byCategory/"+item['id']}>{item['name']}</NavLink></li>
+                            categories.map((item,index)=>{
+                                return <li key={index.toString()}><NavLink to={"/byCategory/"+item['id']}>{item['name']}</NavLink></li>
                             })
                         }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <a className="btn btn-ghost normal-case text-xl">MR.BLOG</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                     <li><NavLink to="/">হোম</NavLink></li>
                     {
-                            categories.map((item)=>{
-                                return <li key={item['id']}><NavLink to={"/byCategory/"+item['id']}>{item['name']}</NavLink></li>
+                            categories.map((item,index)=>{
+                                return <li key={index.toString()}><NavLink to={"/byCategory/"+item['id']}>{item['name']}</NavLink></li>
                             })
                         }
                     </ul>

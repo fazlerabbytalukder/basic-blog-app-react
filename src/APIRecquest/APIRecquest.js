@@ -11,3 +11,33 @@ export async function postCategories(){
         return [];
     }
 }
+
+export async function postLatest(){
+    let res = await axios.get(BaseURL+"/post-newest");
+    // console.log(res);
+    if(res.status===200){
+        return res.data;
+    }else{
+        return [];
+    }
+}
+
+export async function postByCategory(id){
+    let res = await axios.get(BaseURL+"/post-list/"+id);
+    // console.log(res);
+    if(res.status===200){
+        return res.data;
+    }else{
+        return [];
+    }
+}
+
+export async function postDetails(id){
+    let res = await axios.get(BaseURL+"/post-details/"+id);
+    // console.log(res);
+    if(res.status===200){
+        return res.data;
+    }else{
+        return [];
+    }
+}
